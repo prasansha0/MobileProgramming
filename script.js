@@ -1,14 +1,15 @@
 function calculateResult() {
 
     let totalMarks = 
-        Number (document.getElementsById("m1").value) +
-        Number (document.getElementsById("m2").value) +
-        Number (document.getElementsById("m3").value) +
-        Number (document.getElementsById("m4").value) +
-        Number (document.getElementsById("m5").value) +
-        Number (document.getElementsById("m6").value) +
-        Number (document.getElementsById("m7").value) +
-        Number (document.getElementsById("m8").value);
+        Number (document.getElementById("m1").value) +
+        Number (document.getElementById("m2").value) +
+        Number (document.getElementById("m3").value) +
+        Number (document.getElementById("m4").value) +
+        Number (document.getElementById("m5").value) +
+        Number (document.getElementById("m6").value) +
+        Number (document.getElementById("m7").value) +
+        Number (document.getElementById("m8").value);
+
     let totalText = document.getElementById("total");
     let resultText = document.getElementById("result");
 
@@ -27,7 +28,8 @@ function calculateResult() {
     else if (totalMarks <500) {
         resultText.innerHTML = "Third Division";
     }
-    else
+    else {
         resultText.innerHTML = "FAIL";
         resultText.style.color = "red";
+    }
 }
