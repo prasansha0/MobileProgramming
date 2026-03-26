@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js">
+    </script>
+    <script>
+    $(document).ready(function(){ 
+        $("#b1").click(function(){
+            $("#output").text("Student Name:" + $("#student-name").text());
+        });
+
+        $("#b2").click(function(){
+            $("#output").text("Student Name:" + "Prasansha");
+        });
+
+        $("#b3").click(function(){
+            $("#output").html("HTML:" + "Prasansha");
+        });
+    });
+    </script>
+    </head>
+
+    <body>
+        <p id = "student-name" style="display:none">Shyam</p>
+
+        <button id="b1">Show Name</button><br><br>
+        <button id="b2">Set Name</button>
+        <button id="b3">Show-Bio</button>
+        <p id = "output"></p>
+    </body>
+    </html>
