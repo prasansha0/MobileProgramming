@@ -14,18 +14,41 @@
         });
 
         $("#b3").click(function(){
-            $("#output").html("HTML:" + "Prasansha");
+            $("#output").text("Bio:<br>" + $("#bio").html());
+        });
+        $("#b4").click(function(){
+           $("#output").text("Value: " + $("#nickname-input").val());
+        });
+        $("#b5").click(function(){
+            $("#output").text("New Value: " + $("#nickname-input").val());
         });
     });
+    </script>
+    <script>
+
     </script>
     </head>
 
     <body>
+        <h2>GET & SET</h2>
         <p id = "student-name" style="display:none">Shyam</p>
+        <p id="bio" style="display:none">Course: BScIT<br> Year: 3rd</p>
 
         <button id="b1">Show Name</button><br><br>
-        <button id="b2">Set Name</button>
-        <button id="b3">Show-Bio</button>
+        <button id="b2">Set Name</button><br><br>
+        <button id="b3">Show Bio</button><br><br>
+        <button id="b4">Get Input</button>
+        <input type="text" id="nickname-input" placeholder="Enter nickname"><br><br>
+        <button id="b5">Set Input</button>
+        <input type="text" id="nickname-input" placeholder="Enter nickname">
         <p id = "output"></p>
+
+        <h2>CSS Classes</h2>
+        <button id="b6">Highlight Card</btton>
+        <button id="b7">Remove Highlight</button>
+        <p id="output2"></p>
+    
+        <div id="card" style="width:200px; height:100px; border:1px solid black; margin-top:20px;">
+            This is a card.</div>
     </body>
     </html>
