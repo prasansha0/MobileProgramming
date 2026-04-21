@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us Form</title>
+<style>
+  body {
+    background-color: #f8f4f7;
+    padding: 20px;
+    font-family: Arial;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: auto;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    margin: 5px 5px; 
+  }
+
+  label {
+    margin-bottom: 2px;
+    display: block;
+  }
+
+  input, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 2px;
+    margin-bottom: 8px; /* reduced from 15px */
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  textarea {
+    height: 50px;
+    resize: none;
+  }
+
+  .row {
+    display: flex;
+    gap: 10px; /* reduced gap between first & last name */
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #b099ce;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+
+  .small-btn {
+    width: auto;
+    padding: 6px 10px;
+  }
+</style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Contact Us</h1>
+
+    <h2>Submit Contact</h2>
+
+    <h4>User ID</h4>
+    <input type="text" id="userId" placeholder="Enter your ID">
+
+    <h4>Full Name</h4>
+    <div class="row">
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="text" id="lastName" placeholder="Last Name">
+    </div>
+
+    <h4>Phone Number</h4>
+    <input type="text" id="phone" placeholder="98XXXXXXXX">
+
+    <h4>Email</h4>
+    <input type="email" id="email" placeholder="example@example.com">
+
+    <h4>Address</h4>
+    <input type="text" id="address" placeholder="Street Address">
+
+    <h4>Message</h4>
+    <textarea id="message" placeholder="Leave us a message"></textarea>
+
+    <h4>Preferred Method of Contact</h4>
+    <select id="contactMethod">
+      <option value="email">Email</option>
+      <option value="phone">Phone</option>
+    </select>
+
+    <button onclick="writeUserData(
+      document.getElementById('userId').value,
+      document.getElementById('firstName').value,
+      document.getElementById('lastName').value,
+      document.getElementById('phone').value,
+      document.getElementById('email').value,
+      document.getElementById('address').value,
+      document.getElementById('message').value,
+      document.getElementById('contactMethod').value
+    )">SUBMIT</button>
+
+    <!-- READ -->
+    <h2>Read Contacts</h2>
+    <button class="small-btn" onclick="readUserData()">Read</button>
+
+    <!-- UPDATE -->
+    <h2>Update Contact</h2>
+
+    <input type="text" id="updateId" placeholder="User ID">
+    <input type="text" id="updateFirstName" placeholder="New First Name">
+    <input type="text" id="updateLastName" placeholder="New Last Name">
+    <input type="text" id="updatePhone" placeholder="New Phone">
+    <input type="email" id="updateEmail" placeholder="New Email">
+
+    <button onclick="updateUserData(
+      document.getElementById('updateId').value,
+      {
+        firstName: document.getElementById('updateFirstName').value,
+        lastName: document.getElementById('updateLastName').value,
+        phone: document.getElementById('updatePhone').value,
+        email: document.getElementById('updateEmail').value
+      }
+    )">Update Contact</button>
+
+    <!-- DELETE -->
+    <h2>Delete Contact</h2>
+
+    <input type="text" id="deleteId" placeholder="User ID">
+    <button onclick="deleteUserData(document.getElementById('deleteId').value)">
+      Delete Contact
+    </button>
+
+  </div>
+
+  <script type="module" src="fbContact.js"></script>
+
+</body>
+</html>
