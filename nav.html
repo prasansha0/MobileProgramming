@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Top navbar */
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: #7b693a;
+  overflow: hidden;
+}
+
+/* Horizontal */
+ul.nav li {
+  float: left;
+}
+
+ul.nav li a {
+  display: block;
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.nav li a:hover {
+  background-color: #8e866d;
+}
+
+/* Content */
+.content {
+  padding: 16px;
+}
+
+/* Hamburger button */
+.menu-btn {
+  display: none;
+  font-size: 26px;
+  padding: 10px;
+  background: #7b693a;
+  color: white;
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+
+@media screen and (max-width: 700px) {
+
+  .menu-btn {
+    display: block;
+  }
+
+  ul.nav {
+    display: none;
+    width: 100%;
+  }
+
+  ul.nav.show {
+    display: block;
+  }
+
+  ul.nav li {
+    float: none;
+    text-align: center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+<!-- Navbar -->
+<ul class="nav" id="nav">
+  <li><a href="#">Home</a></li>
+  <li><a href="#">News</a></li>
+  <li><a href="#">Contact</a></li>
+  <li><a href="#">About</a></li>
+</ul>
+
+<div class="content">
+  <h2>Responsive Top Navbar</h2>
+  <p>Resize below 700px to see hamburger menu.</p>
+</div>
+
+<script>
+function toggleMenu() {
+  document.getElementById("nav").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
